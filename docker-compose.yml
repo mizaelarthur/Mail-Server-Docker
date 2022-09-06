@@ -1,6 +1,7 @@
 version: '3'
 services:
 
+# Servidor Web 01
   web01:
     build:
       context: ./web
@@ -12,6 +13,7 @@ services:
     networks:
       - asa-network
 
+# Servidor Web 02
   web02:
     build:
       context: ./web
@@ -23,6 +25,7 @@ services:
     networks:
       - asa-network
       
+# Servidor de proxy
   proxy:
     build:
       context: ./web
@@ -40,6 +43,7 @@ services:
     networks:
       - asa-network
 
+# Servidor de DNS
   dns:
     build:
       context: ./dns
@@ -57,6 +61,7 @@ services:
     networks:
       - asa-network
  
+ # Servidor de Email
   mail:
     build:
       context: ./email
@@ -73,7 +78,7 @@ services:
     networks:
       - asa-network
 
-#Docker Networks
+# Identificando Redes
 networks:
   asa-network:
     driver: bridge
